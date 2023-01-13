@@ -9,4 +9,6 @@ public interface ServiceBusiness {
 
     public Todo save(Todo todo);
 
+    public Todo getById(Long todoId);
+
 }
