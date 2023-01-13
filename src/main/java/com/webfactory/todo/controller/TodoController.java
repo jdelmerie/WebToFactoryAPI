@@ -20,16 +20,15 @@ public class TodoController {
         return todoService.getAll();
     }
 
-//    @PutMapping("/updateTodoState/{todoId}/{newState}")
-//    public void updateTraining(@PathVariable("todoId") long todoId, @PathVariable("newState") boolean newState, @RequestBody Todo todo) {
-//        Todo todoToUpdate = todoService.getById(todo);
-//        todoToUpdate.setDone(newState);
-//        todoService.save(todoToUpdate);
-//    }
-
     @PutMapping("/updateTodoState/{todoId}")
     public Todo updateTraining(@PathVariable("todoId") Long todoId, @RequestBody Todo todo) {
         todo.setDone(!todo.isDone());
+        todoService.save(todo);
+        return todo;
+    }
+
+    @PostMapping("/addNewTodo/")
+    public Todo addNewTodo(@RequestBody Todo todo) {
         todoService.save(todo);
         return todo;
     }

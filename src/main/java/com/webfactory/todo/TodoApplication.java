@@ -19,8 +19,8 @@ public class TodoApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		todoService.save(new Todo(1L, "Write an article for my blog", false));
-		todoService.save(new Todo(2L, "Learn more about Angular", true));
-		todoService.save(new Todo(3L, "Go to the doctor", false));
+		todoService.save(new Todo(1L, "Write an article for my blog", "Will take about the year 1993", false));
+		todoService.save(new Todo(2L, "Learn more about Angular", "NGRX", true));
+		todoService.save(new Todo(3L, "Go to the doctor", "Need to take an appointment before",false));
 	}
 }
