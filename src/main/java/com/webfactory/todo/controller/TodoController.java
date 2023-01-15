@@ -22,7 +22,6 @@ public class TodoController {
 
     @PutMapping("/updateTodoState/{todoId}")
     public Todo updateTraining(@PathVariable("todoId") Long todoId, @RequestBody Todo todo) {
-        todo.setDone(!todo.isDone());
         todoService.save(todo);
         return todo;
     }
@@ -32,5 +31,11 @@ public class TodoController {
         todoService.save(todo);
         return todo;
     }
+
+    @DeleteMapping("/deleteTodo/{todoId}")
+    public void deleteTodo(@PathVariable("todoId") Long todoId) {
+        todoService.delete(todoId);
+    }
+
 
 }

@@ -28,4 +28,9 @@ public class TodoServiceImpl implements  ServiceBusiness{
     public Todo getById(Long todoId) {
         return todoRepository.getById(todoId);
     }
+
+    @Override
+    public void delete(Long todoId) {
+        todoRepository.deleteById(todoId);
+    }
 }

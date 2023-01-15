@@ -11,4 +11,6 @@ public interface ServiceBusiness {
 
     public Todo getById(Long todoId);
 
+    public void delete(Long todoId);
+
 }
